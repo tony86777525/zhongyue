@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Admin\Controllers\Zy;
+namespace App\Admin\Controllers\User;
 
 use App\Models\Banner;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Encore\Admin\Widgets\Table;
 
 class BannerController extends AdminController
 {
@@ -27,14 +28,22 @@ class BannerController extends AdminController
         $grid = new Grid(new Banner());
 
 //        $grid->column('id', __('Id'));
-        $grid->column('image', __('Image'));
+        $grid->column('image', __('Image'))->modal(__('Image'), function () {
+            return new Table([$this->alt], [[$this->show_image]]);
+        });
         $grid->column('alt', __('Alt'));
 //        $grid->column('created_at', __('Created at'));
 //        $grid->column('updated_at', __('Updated at'));
 
+        $grid->actions(function($actions){
+            $actions->disableView();
+            $actions->disableDelete();
+        });
+
+        $grid->disableFilter();
 //        $grid->disableActions();
         $grid->disableBatchActions();
-//        $grid->disableCreateButton();
+        $grid->disableCreateButton();
         $grid->disableExport();
         $grid->disableColumnSelector();
         $grid->disablePagination();

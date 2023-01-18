@@ -32,7 +32,7 @@ class PostController extends AdminController
         $grid->column('name', __('姓名'));
         $grid->column('phone', __('手機'));
         $grid->column('email', __('信箱'));
-        $grid->column('ip', __('用戶IP網址'));
+        $grid->column('ip', __('用戶IP'));
         $grid->column('url', __('來源網址'));
         $grid->column('created_at', __('Created at'))->display(function () {
             return date('Y-m-d H:i:s', strtotime($this->created_at));
@@ -47,7 +47,7 @@ class PostController extends AdminController
             $filter->like('name', __('姓名'));
             $filter->like('phone', __('手機'));
             $filter->like('email', __('信箱'));
-            $filter->like('ip', __('用戶IP網址'));
+            $filter->like('ip', __('用戶IP'));
             $filter->like('url', __('來源網址'));
         });
 

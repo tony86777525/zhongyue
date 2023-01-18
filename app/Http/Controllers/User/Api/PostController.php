@@ -27,17 +27,25 @@ class PostController extends Controller
             $post->name = $data['name'];
             $post->phone = $data['phone'];
             $post->email = $data['email'];
-            $post->ip = $request->ip();
+            if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+                $ip_text = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                $ip_array = explode(',', $ip_text);
+                $ip = $ip_array[0];
+            }else{
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            $post->ip = $ip;
             $post->url = $data['url'];
 
             $post->save();
 
-            $to_name = 'dc1';
-            $to_email = 'tony86777525@gmail.com';
-            Mail::send('email.post', $post->toArray(), function($message) use ($to_name, $to_email) {
-                $message->to($to_email, $to_name)
-                    ->subject('Laravel Test Mail');
-                $message->from('tony86777525@gmail.com', 'Test Mail');
+            $postNoticeMailData = getPostNoticeMailData();
+
+            Mail::send('email.post', $post->toArray(), function($message) use ($postNoticeMailData) {
+                $message->to($postNoticeMailData['toMail'], $postNoticeMailData['toName'])
+                    ->subject($postNoticeMailData['subject']);
+
+                $message->from($postNoticeMailData['fromMail'], $postNoticeMailData['fromName']);
             });
 
             $result['type'] = '1';

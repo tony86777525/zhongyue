@@ -11,7 +11,9 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
 
-    $router->get('/', 'HomeController@index')->name('home');
+//    $router->get('/', 'HomeController@index')->name('home');
+
+    $router->get('/', 'IndexController@index')->name('home');
 
     Route::group([
         'namespace'     => 'Zy',

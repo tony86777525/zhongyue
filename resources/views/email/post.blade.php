@@ -14,7 +14,7 @@
         <div>{{ $email }}</div>
     </li>
     <li>
-        <b>用戶IP位置</b>
+        <b>用戶IP</b>
         <div>{{ $ip }}</div>
     </li>
     <li>
