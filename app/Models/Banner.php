@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Banner extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'posts';
+    protected $table = 'banners';
 
     /**
      * The primary key associated with the table.
@@ -60,4 +60,19 @@ class Post extends Model
 
     // default value
     protected $attributes = [];
+
+    public function getShowImageAttribute()
+    {
+        $imgSrc = '/uploads/' . $this->image;
+
+        return "<img src='$imgSrc'>";
+    }
+
+    public function getImageSrcAttribute()
+    {
+        $imgSrc = '/uploads/' . $this->image;
+
+        return $imgSrc;
+    }
+
 }

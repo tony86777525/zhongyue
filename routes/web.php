@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\IndexController;
+use App\Http\Controllers\User\Api\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,5 @@ Route::group([
 ], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('user.top');
-//    Route::post('/api/post/store', [PostController::class, 'store'])->name('api.post.store');
-//    Route::post('/api/captcha/reload', [CaptchaController::class, 'getCaptchaImageSrc'])->name('api.captcha.reload');
+    Route::post('/api/post/store', [PostController::class, 'store'])->name('api.post.store');
 });

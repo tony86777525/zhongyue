@@ -21,6 +21,7 @@ Route::group([
 //        $router->resource('section/sliders', SectionSliderController::class);
 
         $router->resource('posts', PostController::class);
+        $router->resource('banners', BannerController::class);
     });
 
 
@@ -33,5 +34,6 @@ Route::group([
 //        $router->resource('user/section/sliders', SectionSliderController::class);
 
         $router->resource('user/posts', PostController::class);
+        $router->resource('user/banners', BannerController::class);
     });
 });

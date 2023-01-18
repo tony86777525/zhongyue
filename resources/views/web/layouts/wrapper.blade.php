@@ -11,6 +11,7 @@
     <meta property="og:site_name" content="森Plaza" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="森Plaza" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('web.layouts.css')
     @include('web.layouts.gtm_head')
 </head>

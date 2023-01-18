@@ -2,21 +2,11 @@
 @section('main')
     {{-- 上五格圖片置入 --}}
     <div class="kv">
-        <div>
-            <img src="{{asset('imgs/1.png')}}" alt="中悦建設，森PLAZA">
-        </div>
-        <div>
-            <img src="{{asset('imgs/2.png')}}" alt="青埔站前特區，中悦建設機構超級商辦；廣場行地標商辦，森PLAZA">
-        </div>
-        <div>
-            <img src="{{asset('imgs/3.png')}}" alt="CBD核心，森PLAZA">
-        </div>
-        <div>
-            <img src="{{asset('imgs/4.png')}}" alt="森PLAZA，新時代辦公空間">
-        </div>
-        <div>
-            <img src="{{asset('imgs/5.png')}}" alt="森PLAZA，超級商辦，響應ESG環保永續">
-        </div>
+        @foreach($banners as $banner)
+            <div>
+                <img src="{{ asset($banner->image_src) }}" alt="{{ $banner->alt }}">
+            </div>
+        @endforeach
     </div>
     <div class="main_infor">
         <div>
@@ -37,27 +27,28 @@
                         </div>
                         {{-- 中 --}}
                         <div style="height: auto;">
-                            <form>
+                            <form class="form" method="POST" action="{{ route('api.post.store') }}" data-js="post-form">
                                 <div class="form-group row infor_input">
                                     <label for="inputName" class="col-sm-3 col-form-label col-txt">您的姓名</label>
                                     <div class="col-sm-9">
-                                        <input type="" class="form-control" id="name" placeholder="請留下正確姓名，以利後續聯繫" style="border-radius: 0px;background-color: #E6E6E6;">
+                                        <input type="" class="form-control" id="name" name="name" placeholder="請留下正確姓名，以利後續聯繫" style="border-radius: 0px;background-color: #E6E6E6;">
                                     </div>
                                 </div>
                                 <div class="form-group row infor_input">
                                     <label for="inputPhone" class="col-sm-3 col-form-label col-txt">連絡電話</label>
                                     <div class="col-sm-9">
-                                        <input type="" class="form-control" id="phone" style="border-radius: 0px;;background-color: #E6E6E6;">
+                                        <input type="" class="form-control" id="phone" name="phone" style="border-radius: 0px;;background-color: #E6E6E6;">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mb-2 infor_input">
                                     <label for="inputEmail" class="col-sm-3 col-form-label col-txt">電子信箱</label>
                                     <div class="col-sm-7">
-                                        <input type="email" class="form-control" id="email" style="border-radius: 0px;;background-color: #E6E6E6;">
+                                        <input type="email" class="form-control" id="email" name="email" style="border-radius: 0px;;background-color: #E6E6E6;">
                                     </div>
                                     <div id="btn-send" class="col-sm-2">
-                                        <button type="button" class="btn btn-primary" id="btn-sumit">送出</button>
+                                        <input type="hidden" id="url" name="url" value="">
+                                        <button type="submit" class="btn btn-primary" id="btn-sumit" data-js="form-submit">送出</button>
                                     </div>
                             </form>
                         </div>

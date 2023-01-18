@@ -32,7 +32,9 @@ class PostController extends AdminController
 //        $grid->column('id', __('Id'));
         $grid->column('name', __('姓名'));
         $grid->column('phone', __('手機'));
-        $grid->column('mail', __('信箱'));
+        $grid->column('email', __('信箱'));
+        $grid->column('ip', __('用戶IP網址'));
+        $grid->column('url', __('來源網址'));
         $grid->column('created_at', __('Created at'))->display(function () {
             return date('Y-m-d H:i:s', strtotime($this->created_at));
         });
@@ -45,7 +47,9 @@ class PostController extends AdminController
 
             $filter->like('name', __('姓名'));
             $filter->like('phone', __('手機'));
-            $filter->like('mail', __('信箱'));
+            $filter->like('email', __('信箱'));
+            $filter->like('ip', __('用戶IP網址'));
+            $filter->like('url', __('來源網址'));
         });
 
         $grid->disableActions();
@@ -71,7 +75,9 @@ class PostController extends AdminController
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
         $show->field('phone', __('Phone'));
-        $show->field('mail', __('Mail'));
+        $show->field('email', __('Email'));
+        $show->field('ip', __('IP'));
+        $show->field('url', __('Url'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -89,8 +95,9 @@ class PostController extends AdminController
 
         $form->text('name', __('Name'));
         $form->mobile('phone', __('Phone'));
-        $form->email('mail', __('Mail'));
-        $form->textarea('content', __('Content'));
+        $form->email('email', __('Email'));
+        $form->email('ip', __('IP'));
+        $form->email('url', __('Url'));
 
         return $form;
     }
