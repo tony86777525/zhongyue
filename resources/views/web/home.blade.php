@@ -60,7 +60,7 @@
                     <a href="https://www.homeplusone.com.tw/51549b60-ee8e-11eb-b57c-91a3ea7b6909" type="button" class="btn btn-lg btn-more" id="btn-right" style="margin-top: 3.5%;background-color: #A47130;color: white;">新莊副都心<br>寰宇1號</a>
                     <br>
                     <a href="https://reurl.cc/jG7VD2"> <button type="button" class="btn btn-lg btn-more" style="margin-top: 2%;background-color: #3E3A39;color: white;">中悦IG</button></a>
-                    <a href="https://www.joyes-cbd.com/" type="button" class="btn btn-lg btn-more" id="btn-right" style="margin-top: 2%;background-color: #A47130;color: white;">桃園經國<br>恆ONE</a>
+                    <a type="button" class="btn btn-lg btn-more" id="btn-right" style="margin-top: 2%;background-color: #A47130;color: white;">桃園經國<br>恆ONE</a>
                 </div>
                 {{-- <div class="col-6 col-md-4 btn-group" role="group" style="margin-top: 5%;">
                   <div>
