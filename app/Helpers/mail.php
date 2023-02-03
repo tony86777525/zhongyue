@@ -11,6 +11,10 @@ function getPostNoticeMailData(): array
         'alliswell.emily@gmail.com',
         'alliswell.zoey@gmail.com',
         'alliswell.weiwaa@gmail.com',
+
+        // 2023-02-03 add email
+        'sunnyafeel@hotmail.com',
+        'joyes250@gmail.com'
     ];
 
     return [
