@@ -1,6 +1,6 @@
 <!--側邊按鈕-->
 <div class="sidebar" style="">
-    <a class="sidebar_link line" href="https://lin.ee/olehrOX">
+    <a class="sidebar_link line" href="https://line.me/R/ti/p/@ivn2950o">
         <div class="sidebar_div">
             <img class="sidebar_img" src="{{asset('imgs/line.png')}}" style="width: 68%; height: 68%; margin-left: 37%;" />
         </div>
