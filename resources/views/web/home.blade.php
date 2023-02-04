@@ -50,6 +50,7 @@
                                         <input type="hidden" id="url" name="url" value="">
                                         <button type="submit" class="btn btn-primary" id="btn-sumit" data-js="form-submit">送出</button>
                                     </div>
+                                </div>
                             </form>
                         </div>
                     </div>
